@@ -20,9 +20,6 @@ public class Todo {
 	@Column(name = "title")
 	private String title;
 	
-	@Column(name = "user_name")
-	private String username;
-	
 	@Column(name = "description")
 	private String description;
 	
@@ -32,20 +29,18 @@ public class Todo {
 	@Column(name = "status")
 	private boolean status;
 
-	public Todo(Long id, String title, String username, String description, LocalDate targetDate, boolean status) {
+	public Todo(Long id, String title, String description, LocalDate targetDate, boolean status) {
 		super();
 		this.id = id;
 		this.title = title;
-		this.username = username;
 		this.description = description;
 		this.targetDate = targetDate;
 		this.status = status;
 	}
 
-	public Todo(String title, String username, String description, LocalDate targetDate, boolean status) {
+	public Todo(String title, String description, LocalDate targetDate, boolean status) {
 		super();
 		this.title = title;
-		this.username = username;
 		this.description = description;
 		this.targetDate = targetDate;
 		this.status = status;
@@ -69,14 +64,6 @@ public class Todo {
 
 	public void setTitle(String title) {
 		this.title = title;
-	}
-
-	public String getUsername() {
-		return username;
-	}
-
-	public void setUsername(String username) {
-		this.username = username;
 	}
 
 	public String getDescription() {
