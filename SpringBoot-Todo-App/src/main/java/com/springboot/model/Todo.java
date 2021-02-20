@@ -9,6 +9,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 @Entity
 @Table(name = "todo")
 public class Todo {
@@ -23,6 +25,7 @@ public class Todo {
 	@Column(name = "description")
 	private String description;
 	
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	@Column(name = "targetDate")
 	private LocalDate targetDate;
 	

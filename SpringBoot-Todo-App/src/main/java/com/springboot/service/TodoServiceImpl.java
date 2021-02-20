@@ -3,10 +3,12 @@ package com.springboot.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.springboot.model.Todo;
 import com.springboot.repository.TodoRepository;
 
+@Service
 public class TodoServiceImpl implements TodoService {
 
 	@Autowired
@@ -23,10 +25,10 @@ public class TodoServiceImpl implements TodoService {
 		this.todoRepository.save(todo);
 		
 	}
-
+	
 	@Override
-	public void deleteTodo(Todo todo) {
-		this.todoRepository.delete(todo);
+	public void deleteTodoById(long id) {
+		this.todoRepository.deleteById(id);
 		
 	}
 
