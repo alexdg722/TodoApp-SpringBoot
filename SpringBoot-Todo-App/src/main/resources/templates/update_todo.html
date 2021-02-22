@@ -15,10 +15,14 @@
 	<div class="container">
 		<h1>Todo</h1>
 		<hr>
-		<h2> Add new Todo</h2>
+		<h2> Update Todo</h2>
 		
 		<form action="#" th:action="@{/saveTodo}" th:object ="${todo}", method="POST">
 		
+		<!-- Add hidden form field to handle update -->
+            <input type="hidden" th:field="*{id}" />
+            
+            
 		<label>Todo Title</label> 
 		<input type="text" th:field = "*{title}" 
 			placeholder="Title" class="form-control mb-4 col-4">
@@ -41,11 +45,11 @@
 			
 				
 			
-		<button type="submit" class="btn btn-info col-2">Save Todo</button>
+		<button type="submit" class="btn btn-info col-2">Update Todo</button>
 		</form>
-		<hr>
-		
-		<a th:href="@{/}"> Back to Todo List</a>
+		 <hr>
+
+        <a th:href="@{/}"> Back to Todo List</a>
 	</div>
 	
 <div th:include="./resources/footer.html"></div>

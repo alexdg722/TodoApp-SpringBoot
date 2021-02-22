@@ -12,7 +12,7 @@ body {
 
 .topnav {
   overflow: hidden;
-  background-color: rgb(175, 223, 224);
+  background-color: #e9e9e9;
 }
 
 .topnav a {
@@ -65,7 +65,12 @@ body {
 <div class="topnav">
   <a href="https://github.com/alexdg722">Github</a>
   <a th:href = "@{/}">Home</a>
-  <a th:href = "@{/showNewTodoForm}"> Add Todo </a>
+  <a th:href = "@{/showNewEmployeeForm}"> Add Employee </a>
+  <a th:href = "@{/logout}" style="color:blue;">Logout</a>
+  <form th:action="@{/search}" method="get">
+  <input id="search" type="number" placeholder="Search by id..." name="id" required>
+  <input type="submit" style="height: 0px; width: 0px; border: none; padding: 0px; " hidefocus="true" />
+  </form>
 </div>
 
 </body>

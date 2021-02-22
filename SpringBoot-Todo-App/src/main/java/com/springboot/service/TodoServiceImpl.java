@@ -1,6 +1,7 @@
 package com.springboot.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -30,6 +31,19 @@ public class TodoServiceImpl implements TodoService {
 	public void deleteTodoById(long id) {
 		this.todoRepository.deleteById(id);
 		
+	}
+	
+	@Override
+	public Todo getTodoById(long id) {
+		Optional < Todo > optional = todoRepository.findById(id);
+		Todo todo = null;
+		
+	    if (optional.isPresent()) {
+	        todo = optional.get();
+	    } else {
+	        throw new RuntimeException(" Todo not found for id : " + id);
+	    }
+	    return todo;
 	}
 
 	

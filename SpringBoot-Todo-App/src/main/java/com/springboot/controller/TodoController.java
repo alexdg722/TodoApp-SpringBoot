@@ -56,6 +56,14 @@ public class TodoController {
 		  return "redirect:/";
 	}
 	
+	@GetMapping("/showFormForUpdate/{id}")
+	public String showFormForUpdate(@PathVariable ( value = "id") long id, Model model) {
+		
+		Todo todo = todoService.getTodoById(id);
+		model.addAttribute("todo", todo);
+		return "update_todo";
+	}
+	
 	
 	
 
